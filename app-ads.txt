@@ -1,0 +1,12 @@
+# app-ads.txt - Muhammad Shahid Aslam
+#
+# This file is public at /app-ads.txt for AppLovin MAX and app store publisher verification.
+# No authorized seller declaration has been added because no AppLovin publisher ID or relationship
+# has been supplied. Do not invent or copy a publisher, seller, or advertising ID.
+#
+# After AppLovin provides the exact declaration, replace this comment block with only the exact
+# authorized seller line in this format:
+# domain.com, PUBLISHER_ID, RELATIONSHIP_TYPE, CERTIFICATION_AUTHORITY_ID
+#
+# Example shape only - replace every value after AppLovin confirms it:
+# applovin.com, 123456789, DIRECT, f08c47fec0942fa0
