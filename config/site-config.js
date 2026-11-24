@@ -3,9 +3,9 @@ window.SITE_CONFIG = {
   developerLabel: "Shahid Aslam",
   role: "Independent App Developer",
   location: "Pakistan",
-  websiteUrl: "https://muhammadshahidaslam.github.io/",
-  contactEmail: "",
-  emailPlaceholder: "Public email: not configured yet",
+  websiteUrl: "https://mshahid32.github.io/",
+  contactEmail: "muhammadshahidaslam73@gmail.com",
+  emailPlaceholder: "",
   githubUrl: "https://github.com/muhammadshahidaslam",
   linkedinUrl: "",
   socialLinks: {

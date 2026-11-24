@@ -1,6 +1,6 @@
 # Muhammad Shahid Aslam - Developer Portfolio
 
-A static, responsive portfolio for independent Android and iOS app developer Muhammad Shahid Aslam. The website showcases Word Fuse and Hue Dive and is prepared for GitHub Pages and AppLovin MAX publisher verification.
+A static, responsive portfolio for independent Android and iOS app developer Muhammad Shahid Aslam. The website showcases Word Fuse and Hue Dive and is prepared for GitHub Pages and InMobi publisher verification.
 
 ## Local preview
 
@@ -16,7 +16,7 @@ Open `http://localhost:4173/`.
 
 Edit `config/site-config.js` only:
 
-- `contactEmail`: set a public email address. Keep it empty to show the placeholder state.
+- `contactEmail`: the public contact email shown on the site.
 - `linkedinUrl`: set a LinkedIn profile URL. It remains hidden until configured.
 - `games.wordFuse.googlePlayUrl`: set the Word Fuse Google Play listing URL.
 - `games.wordFuse.appStoreUrl`: set the Word Fuse App Store listing URL.
@@ -36,23 +36,23 @@ Replace these files while preserving the filenames, or update the image `src` at
 
 ## Privacy policy
 
-Review `privacy-policy.html` before publication. Marked placeholder sections must be updated with the actual data, advertising, SDK, child-directed status, and contact practices for each app. Do not publish unconfirmed collection or usage claims.
+`privacy-policy.html` describes the data and advertising practices for Word Fuse and Hue Dive. Update it whenever app data collection, advertising SDKs, or privacy practices change.
 
-## AppLovin and app-ads.txt
+## InMobi and app-ads.txt
 
 `app-ads.txt` is public at the repository root and therefore can be reached from `/app-ads.txt` on GitHub Pages.
 
-No AppLovin publisher ID or authorized seller declaration is included because none was supplied. Once AppLovin provides the exact declaration, replace the comment-only content in `app-ads.txt` with its exact seller line:
+`app-ads.txt` contains the supplied InMobi publisher ID. Confirm the seller declaration against the InMobi dashboard before verification:
 
 ```text
-domain, PUBLISHER_ID, DIRECT_OR_RESELLER, CERTIFICATION_AUTHORITY_ID
+inmobi.com, fdb0c3d7bb89442d931cf93a64d196a4, DIRECT, 83e75a7ae333ca9d
 ```
 
-Use the exact line supplied by AppLovin.
+Use the exact line supplied by InMobi.
 
 ## Deploy to GitHub Pages
 
-1. Ensure the repository is named `muhammadshahidaslam.github.io` for the canonical root domain.
+1. Ensure the repository is named `mshahid32.github.io` for the canonical root domain.
 2. Push all files to the `main` branch.
 3. In GitHub repository settings, open **Pages**.
 4. Under **Build and deployment**, select **GitHub Actions**.
