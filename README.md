@@ -1,61 +1,69 @@
-# Muhammad Shahid Aslam - Developer Portfolio
+# Muhammad Shahid Aslam, Developer Website
 
-A static, responsive portfolio for independent Android and iOS app developer Muhammad Shahid Aslam. The website showcases Word Fuse and Hue Dive and is prepared for GitHub Pages and InMobi publisher verification.
+A production-ready Vite, React and TypeScript portfolio for independent mobile app developer Muhammad Shahid Aslam. It presents the Word Fuse and Hue Dive games, shipped production apps, experience, FAQ and contact details.
 
-## Local preview
-
-From this folder:
+## Run locally
 
 ```sh
-python3 -m http.server 4173
+npm install
+npm run dev
 ```
 
-Open `http://localhost:4173/`.
+Open the URL shown by Vite, usually `http://localhost:5173/`.
 
-## Configure site information
+## Build and validate
 
-Edit `config/site-config.js` only:
-
-- `contactEmail`: the public contact email shown on the site.
-- `linkedinUrl`: set a LinkedIn profile URL. It remains hidden until configured.
-- `games.wordFuse.googlePlayUrl`: set the Word Fuse Google Play listing URL.
-- `games.wordFuse.appStoreUrl`: set the Word Fuse App Store listing URL.
-- `games.hueDive.googlePlayUrl`: set the Hue Dive Google Play listing URL.
-- `games.hueDive.appStoreUrl`: set the Hue Dive App Store listing URL.
-
-Google Play and Coming Soon behavior are handled by `js/main.js`. A game link stays disabled and labeled **Coming Soon** while its URL is empty.
-
-## Replace game images
-
-Use the dedicated locations:
-
-- `assets/images/word-fuse/app-icon.png`
-- `assets/images/hue-dive/app-icon.png`
-
-Replace these files while preserving the filenames, or update the image `src` attributes in `index.html`. To add real screenshots, place them in the corresponding folder and update the game card markup in `index.html`. Keep screenshots reasonably compressed for fast loading and provide descriptive alt text.
-
-## Privacy policy
-
-`privacy-policy.html` describes the data and advertising practices for Word Fuse and Hue Dive. Update it whenever app data collection, advertising SDKs, or privacy practices change.
-
-## InMobi and app-ads.txt
-
-`app-ads.txt` is public at the repository root and therefore can be reached from `/app-ads.txt` on GitHub Pages.
-
-`app-ads.txt` contains the supplied InMobi publisher ID. Confirm the seller declaration against the InMobi dashboard before verification:
-
-```text
-inmobi.com, fdb0c3d7bb89442d931cf93a64d196a4, DIRECT, 83e75a7ae333ca9d
+```sh
+npm run lint
+npm run build
+npm run preview
 ```
 
-Use the exact line supplied by InMobi.
+The static output is written to `dist/`.
 
-## Deploy to GitHub Pages
+## Deployment
 
-1. Ensure the repository is named `mshahid32.github.io` for the canonical root domain.
-2. Push all files to the `main` branch.
-3. In GitHub repository settings, open **Pages**.
-4. Under **Build and deployment**, select **GitHub Actions**.
-5. The included workflow in `.github/workflows/deploy.yml` publishes the repository root on every push to `main`.
+### GitHub Pages
 
-The existing `/play/` Word Fuse page remains available.
+Push the repository to GitHub and enable Pages under repository Settings. Configure Pages to deploy from a GitHub Actions workflow. The Vite build must publish `dist/`; the repository currently contains the design exports, legacy static files and a new Vite build, so remove or leave legacy files outside the Pages publish directory as appropriate.
+
+The generated `public/404.html` and `_redirects` provide refresh handling for static hosts. GitHub Pages uses the 404 fallback differently, but public routes must be redirected at the host level or through repository routing configuration.
+
+### Netlify
+
+Import the repository and use:
+
+- Build command: `npm run build`
+- Publish directory: `dist`
+
+`public/_redirects` routes refreshes to `index.html`.
+
+### Vercel
+
+Import the repository. Vercel detects Vite automatically. `vercel.json` contains an SPA rewrite for `/privacy`, `/terms` and unknown routes.
+
+## Store links
+
+The game store pills in `src/pages/Home.tsx` are intentionally non-linking coming-soon labels. When a listing is live:
+
+1. Replace each `.store-pills` span with an anchor or add `href` fields to `src/data/content.ts`.
+2. Preserve `rel="noopener noreferrer"` for external links.
+3. Open Google Play and App Store listings in a new tab only if desired.
+
+## Legal pages
+
+Update the bracketed placeholders in `src/data/legal.ts` and review `TODO.md` before publishing. The same legal copy is rendered at:
+
+- `/privacy`
+- `/terms`
+
+## Play Console checklist
+
+1. Set the developer website to the deployed domain in Google Play Console.
+2. Verify the deployed domain in Google Search Console.
+3. Add `https://<your-domain>/privacy` as the app privacy policy URL.
+4. Replace every placeholder and have the privacy and terms text reviewed before submission.
+
+## Assets
+
+Design images live in `public/images/`. The 540px-wide screenshot copies use `srcset`-style `<picture>` sources for smaller mobile loads. The website uses `public/favicon.svg` and `public/images/og-image.jpg` for metadata assets.

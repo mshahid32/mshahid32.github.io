@@ -1,0 +1,17 @@
+:root {
+  --bg: #070B16;
+  --surface: #0E1526;
+  --border: #1D2A4A;
+  --border-strong: #243459;
+  --border-outline: #34466F;
+  --blue: #2D64F2;
+  --blue-light: #5E92FF;
+  --blue-hover: #8FB1FF;
+  --chip-bg: #13204A;
+  --chip-text: #9DBAFF;
+  --text: #EAF0FF;
+  --text-2: #DCE4FA;
+  --text-3: #C9D3F0;
+  --muted: #B7C2E2;
+  --dim: #93A0C4;
+}
